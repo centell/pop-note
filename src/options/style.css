@@ -1,0 +1,33 @@
+html {
+  font-size: 16px;
+}
+body {
+  font-size: 1rem;
+  min-width: 600px;
+}
+
+.table {
+  border: 1px solid #eee;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.table > caption {
+  font-weight: bold;
+  padding: 0.4em 1em;
+  text-align: left;
+}
+
+.table > * > tr > th,
+.table > * > tr > td {
+  border-bottom: 1px solid #eee;
+  padding: 0.4em 1em;
+}
+
+.table > * > tr > th {
+  font-weight: normal;
+  text-align: initial;
+  vertical-align: top;
+  width: 30%;
+}

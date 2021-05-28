@@ -1,0 +1,19 @@
+### macOS ###
+  .DS_Store
+  .AppleDouble
+  .LSOverride
+
+### IDE ###
+  .idea
+  .vscode
+
+### Environment ###
+  .envrc
+  .direnv
+  .env
+
+### Node.js ###
+  node_modules
+
+### Project ###
+src/lib/*

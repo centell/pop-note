@@ -1,0 +1,85 @@
+{
+  "name": "pop-note",
+  "version": "1.0.0",
+  "description": "pop-note",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run instal-polyfill && cd src && zip -r ../extension.zip . -x */.*",
+    "clean": "rm -rf extension.zip",
+    "install-polyfill": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js src/lib/",
+    "lint": "./node_modules/.bin/eslint --ignore-path .eslintignore . --fix",
+    "dev": "cd src && web-ext run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox-bin"
+  },
+  "author": "Centell <centell@me.com>",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "commonjs": true,
+      "es6": true,
+      "node": true,
+      "mocha": true,
+      "browser": true
+    },
+    "extends": [
+      "airbnb-base"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^next$|^res|Sequelize"
+        }
+      ],
+      "import/no-unresolved": "off",
+      "arrow-body-style": "off",
+      "object-curly-newline": "off",
+      "max-len": "warn",
+      "no-restricted-syntax": "warn",
+      "no-use-before-define": "off",
+      "camelcase": "warn",
+      "space-before-function-paren": "off",
+      "consistent-return": "warn",
+      "arrow-parens": "off"
+    }
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.3",
+    "husky": "^4.3.8",
+    "lint-staged": "^11.0.0",
+    "webextension-polyfill": "^0.8.0"
+  }
+}

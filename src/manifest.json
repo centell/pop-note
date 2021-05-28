@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "pop-note",
+  "version": "1.0.0",
+  "description": "pop note",
+  "author": "Centell <centell@me.com>",
+  "icons": {
+    "90": "icons/icon-90.png"
+  },
+  "permissions": [
+    "notifications",
+    "storage"
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon-90.png",
+    "default_title": "App",
+    "default_popup": "views/popup.html"
+  },
+  "options_ui": {
+    "page": "options/index.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "firefox-exteionsion-init@example.com"
+    }
+  }
+}
