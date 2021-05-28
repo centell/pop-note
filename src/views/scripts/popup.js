@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (options.note) note = options.note;
     document.querySelector('#note').innerText = note;
   };
-  const getting = browser.storage.sync.get('note');
-  getting.then(init, onError);
+  browser.storage.sync.get('note').then(init, onError);
+  browser.storage.sync.get('rows').then(obj => {
+    document.querySelector('#note').setAttribute('rows', obj.rows);
+  });
+  browser.storage.sync.get('cols').then(obj => {
+    document.querySelector('#note').setAttribute('cols', obj.cols);
+  });
 });
