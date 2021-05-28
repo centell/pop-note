@@ -5,18 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <script type="application/javascript" src="lib/browser-polyfill.min.js"></script>
-  <title>Daily Pomodoro</title>
+  <title>Pop-note</title>
 
+  <link rel="stylesheet" href="styles/popup.css">
 </head>
 <body>
 <div id="container">
-  <textarea id="note"></textarea>
+  <div id="contents">
+    <div id="listArea">
+      <ul>
+        <li><span>1</span></li>
+        <li><span>1</span></li>
+        <li><span>1</span></li>
+      </ul>
+      <button>add note</button>
+    </div>
+    <div id="noteArea">
+      <div>
+        <textarea id="note"></textarea>
+      </div>
+      <div>
+        <button>Remove note</button>
+        <button>Download note</button>
+      </div>
+    </div>
+  </div>
   <div>
-    <button id="saveButton">Save</button>
+<!--    <button id="saveButton">Save</button>-->
     <button id="optionButton">Settings</button>
   </div>
 </div>
+<script type="application/javascript" src="lib/browser-polyfill.min.js"></script>
 <script type="application/javascript" src="scripts/popup.js"></script>
 </body>
 </html>

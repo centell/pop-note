@@ -5,12 +5,17 @@ const clickListener = () => {
       e.preventDefault();
       browser.runtime.openOptionsPage();
     }
-    if (e.target.id === 'saveButton') {
-      e.preventDefault();
-      browser.storage.sync.set({
-        note: document.querySelector('#note').value,
-      });
-    }
+    // if (e.target.id === 'saveButton') {
+    //   e.preventDefault();
+    //   browser.storage.sync.set({
+    //     note: document.querySelector('#note').value,
+    //   });
+    // }
+  });
+  document.addEventListener('change', e => {
+    browser.storage.sync.set({
+      note: document.querySelector('#note').value,
+    });
   });
 };
 
@@ -26,9 +31,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
   browser.storage.sync.get('note').then(init, onError);
   browser.storage.sync.get('rows').then(obj => {
-    document.querySelector('#note').setAttribute('rows', obj.rows);
+    document.querySelector('#note').setAttribute('rows', obj.rows || 5);
   });
   browser.storage.sync.get('cols').then(obj => {
-    document.querySelector('#note').setAttribute('cols', obj.cols);
+    document.querySelector('#note').setAttribute('cols', obj.cols || 33);
   });
 });

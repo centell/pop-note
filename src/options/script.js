@@ -10,7 +10,7 @@ const defaultParams = {
 const saveOptions = (e) => {
   e.preventDefault();
   browser.storage.sync.set({
-    note: document.querySelector('#note').value,
+    // note: document.querySelector('#note').value,
     rows: document.querySelector('#rows').value,
     cols: document.querySelector('#cols').value,
   });
@@ -18,7 +18,7 @@ const saveOptions = (e) => {
 
 const restoreOptions = () => {
   const setCurrentOptions = (result) => {
-    document.querySelector('#note').value = result.note || defaultParams.note;
+    // document.querySelector('#note').value = result.note || defaultParams.note;
     document.querySelector('#rows').value = result.rows || defaultParams.rows;
     document.querySelector('#cols').value = result.cols || defaultParams.cols;
   };
@@ -27,7 +27,7 @@ const restoreOptions = () => {
     console.log(`Error: ${err}`);
   };
 
-  browser.storage.sync.get('note').then(setCurrentOptions, onError);
+  // browser.storage.sync.get('note').then(setCurrentOptions, onError);
   browser.storage.sync.get('rows').then(setCurrentOptions, onError);
   browser.storage.sync.get('cols').then(setCurrentOptions, onError);
 };

@@ -1,0 +1,22 @@
+html {
+  font-size: 16px;
+}
+body {
+  font-size: 1rem;
+}
+
+#contents {
+  display: flex;
+  flex-direction: row;
+}
+
+#optionButton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
