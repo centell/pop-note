@@ -13,16 +13,12 @@
 <div id="container">
   <div id="contents">
     <div id="listArea">
-      <ul>
-        <li><span>1</span></li>
-        <li><span>1</span></li>
-        <li><span>1</span></li>
-      </ul>
-      <button>add note</button>
+      <button id="addNoteButton">add note</button>
+      <ul id="noteList"></ul>
     </div>
     <div id="noteArea">
       <div>
-        <textarea id="note"></textarea>
+        <textarea id="note" data-index="0"></textarea>
       </div>
       <div>
         <button>Remove note</button>
@@ -31,8 +27,11 @@
     </div>
   </div>
   <div>
-<!--    <button id="saveButton">Save</button>-->
     <button id="optionButton">Settings</button>
+    <div>
+      <span>count:</span>
+      <span id="noteCount"></span>
+    </div>
   </div>
 </div>
 <script type="application/javascript" src="lib/browser-polyfill.min.js"></script>
